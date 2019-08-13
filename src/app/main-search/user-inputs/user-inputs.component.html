@@ -1,0 +1,53 @@
+<div id="user-inputs-container">
+  <div class="input-header">
+    <h3>Transcripts Search</h3>
+  </div>
+  <div class="input-body">
+    <div class="main-search-block">
+      <form [formGroup]="searchForm" (ngSubmit)="submitTranscriptForm()">
+        <div class="input-group">
+          <label for="gene">
+            Gene symbol:
+            <input type="text" placeholder="e.g. BRAF" formControlName="gene">
+          </label>
+        </div>
+        <div class="input-group">
+          <label for="position">
+            Position in protein sequence:
+            <input type="number" placeholder="e.g. 600" min="1" formControlName="position">
+          </label>
+        </div>
+        <div class="input-group">
+          <label for="amino_acid">
+            A amino acid letter:
+            <input type="text" placeholder="e.g. V" formControlName="amino_acid">
+          </label>
+          
+          <div *ngIf="searchForm.controls['amino_acid'].errors" class="error-explanation">
+            <p *ngIf="searchForm.controls['amino_acid'].errors.maxlength">Only one amino acid letter is allowed</p>
+          </div>
+        </div>
+        <div class="submit-btn-group">
+          <button class="search-btn" [disabled]="searchForm.invalid">
+            Get Results
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="variant-search-block">
+      <form [formGroup]="hgvsForm">
+        <div class="variant-input-group">
+          <label for="">
+            Check for Variant using HGVS 
+          </label>
+          <input type="text" formControlName="hgvs"  pattern="([A-Z]{4}[\d]{11})\.([\d]+)\:([a-z])\.([A-Z][a-z]{2})(\d+)([A-Z][a-z]{2})"
+            placeholder="e.g. ENSP00000419060.2:p.Val600Glu" id="variant-input">
+          
+          <div *ngIf="hgvsForm.controls['hgvs'].errors" class="error-explanation">
+            <p *ngIf="hgvsForm.dirty && hgvsForm.controls['hgvs'].errors.pattern">Please provide in proper HGVS format</p>
+          </div>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

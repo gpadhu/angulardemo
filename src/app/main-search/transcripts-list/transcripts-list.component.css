@@ -1,0 +1,15 @@
+.transcript-container {
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bolder;
+    padding: 10px;
+}
+
+.transcript-container div {
+    flex: 1;
+}
+
+.welcome {
+    text-align: center;
+    color: #444646;
+}

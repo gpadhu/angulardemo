@@ -1,0 +1,25 @@
+<div class="welcome" *ngIf="transcripts.length==0; else transcriptResult">
+    <h2>Welcome to transcript Search!</h2>
+    <p *ngIf="!notFound; else errorExplanation">Please search using the search filters or HGVS</p>
+    <ng-template #errorExplanation>
+        <p>There is no transcription for your search, please try again with values.</p>
+    </ng-template>
+</div>
+ 
+<ng-template #transcriptResult>
+    <div class="transcript-container">
+        <div class="transcript-id">
+        Transcription
+        </div>
+        <div class="assembly-name">
+        Assembly Name
+        </div>
+        <div class="display-name">
+        Display Name
+        </div>
+        <div class="species">
+        Source
+        </div>
+    </div>
+    <embl-transcript-item *ngFor="let transcript of transcripts" [transcript]="transcript"></embl-transcript-item>
+</ng-template>

@@ -1,27 +1,38 @@
 # EmblTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.4.
+Thank you for providing me opportunity to work in this technical task.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+App consists of 4 main components, 
 
-## Code scaffolding
+1. main search component (it will render user input component and transcript list component)
+2. user input component (used to get user inputs)
+3. transcript lists component. (it will render transcript item component)
+4. transcript item component. (used to render results to user)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+I have created all components inside mainsearch folder to be more modular, It will be helpful to keep separate as modules to update/extend the project or to add new modules.
 
-## Build
+## Logical Approach: 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Task 1: I'm calling symbol lookup rest api to get all data for that gene. Once data retrieved, I'm calling sequence rest api to get all protein sequence. From the protein sequence result I'm validating if the transcripts match with the position and amino acid value user entered in the form and displaying the results to the user.
 
-## Running unit tests
+Task 2: Using user's hgvs input value i'm calling hgvs notation rest api to see if the variant is available and if it is available, If it's matches with 
+​input hgvs notation, I'm calling identifier lookup rest api to get all matched transcription data and displaying in the view.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+​Due to time constraints I'm not able to focus on test cases, sorry about that but I understand the importance of testing.
 
-## Running end-to-end tests
+## Instructions to Run application : 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Method 1:
+1. Please extract the zip file and navigate into the folder `embl-test-project`.
+2. Run `npm install` in terminal to install all dependent libraries.
+3. Run `ng serve --open` in terminal to run the application.  
+​
+If above method does not working due to any library/node packages issues, please use the method 2. I have compiled the project, you can run using any simple server.
 
-## Further help
+​## Method 2:​ 
+​1. Please extract the zip file and navigate into the folder `embl-test-project`.
+2. Compiled project is in `dist` directory, please navigate into the folder.
+3. Now you can run the project from this directory using any server. Eg., https://www.npmjs.com/package/simple-server
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Thank you

@@ -1,0 +1,8 @@
+<div id="container">
+  <div id="user-inputs">
+    <embl-user-inputs (transcriptSearched)='searchTranscripts($event)' (hgvsSearched)="searchTranscriptsFromHgvs($event)"></embl-user-inputs>
+  </div>
+  <div id="transcripts">
+    <embl-transcripts-list [transcripts]="filteredTranscripts" [notFound]="notFound"></embl-transcripts-list> 
+  </div>
+</div>  

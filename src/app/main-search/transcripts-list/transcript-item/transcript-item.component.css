@@ -1,0 +1,9 @@
+.transcript-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.transcript-container div {
+    flex: 1;
+}
